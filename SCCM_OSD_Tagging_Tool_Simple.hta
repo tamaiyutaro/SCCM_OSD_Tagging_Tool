@@ -1,0 +1,38 @@
+<html> 
+<head> 
+<title>SCCM OSD Tagging Tool (Simple)</title> 
+
+<HTA:APPLICATION 
+    APPLICATIONNAME="SCCM OSD Tagging Tool (Simple)" 
+    SCROLL="yes" 
+    SINGLEINSTANCE="yes"        
+    WINDOWSTATE="normal" 
+    BORDER="thin" 
+    VERSION="1.00"
+> 
+
+</head> 
+
+<script language="vbscript" type="text/vbscript"> 
+
+
+Sub Window_OnLoad
+    OSDcomputerName.focus
+End Sub
+
+Sub ButtonFinishClick 
+    
+    SET env = CreateObject("Microsoft.SMS.TSEnvironment") 
+    env("OSDComputerName") = OSDcomputername.Value
+    window.Close 
+End Sub
+
+</script> 
+
+<body> 
+
+<p>Computer Name:</p> 
+<input type=text id="OSDcomputerName" name=OSDcomputerName size=40 style="text-Transform:uppercase"><br /> 
+<button accesskey=N type=submit id=buttonFinish onclick=ButtonFinishClick >Finish</button>
+</body> 
+</html> 
