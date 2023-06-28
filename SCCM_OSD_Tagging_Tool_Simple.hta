@@ -23,7 +23,7 @@ End Sub
 Sub ButtonFinishClick 
     
     SET env = CreateObject("Microsoft.SMS.TSEnvironment") 
-    env("OSDComputerName") = OSDcomputername.Value
+    env("OSDComputerName") = Ucase(OSDcomputername.Value)
     window.Close 
 End Sub
 
